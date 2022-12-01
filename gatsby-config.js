@@ -4,7 +4,22 @@
 module.exports = {
   siteMetadata: {
     title: `Jet New`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://jetnew.io`,
   },
-  plugins: [],
+  plugins: [
+      "gatsby-plugin-image",
+      "gatsby-plugin-sharp",
+      {
+          resolve: "gatsby-source-filesystem",
+          options: {
+              name: `blog`,
+              path: `${__dirname}/blog`,
+          }
+      },
+      "gatsby-plugin-mdx",
+      "gatsby-remark-images",
+      "gatsby-remark-prismjs",
+      "gatsby-remark-autolink-headers",
+      "gatsby-transformer-sharp",
+  ],
 }
