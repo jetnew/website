@@ -10,6 +10,7 @@ Install:
 ```
 brew install npm
 npm install gatsby-cli
+npm install gatsby-remark-images gatsby-remark-prismjs gatsby-remark-autolink-headers
 npm install gatsby-plugin-image gatsby-plugin-sharp gatsby-source-filesystem
 npm install gatsby-plugin-mdx @mdx-js/react
 npm install gatsby-transformer-sharp
