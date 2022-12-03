@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import {
     container,
-    heading,
+    // heading,
     navLinks,
     navLinkItem,
     navLinkText,
