@@ -16,7 +16,11 @@
     "deploy": "gatsby build && gh-pages -d public"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@fontsource/roboto": "^4.5.8",
     "@mdx-js/react": "^2.1.5",
+    "@mui/material": "^5.10.16",
     "gatsby": "^5.2.0",
     "gatsby-cli": "^5.2.0",
     "gatsby-plugin-image": "^3.2.0",

@@ -1,13 +1,17 @@
 import * as React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import {
     container,
     heading,
     navLinks,
     navLinkItem,
     navLinkText,
-    siteTitle,
+    // siteTitle,
 } from './layout.module.css'
+// import { Typography } from '@mui/material'
+import Link from '../components/link'
+import { Typography } from '@mui/material'
+
 
 const Layout = ({ pageTitle, children }) => {
     const data = useStaticQuery(graphql`
@@ -22,28 +26,40 @@ const Layout = ({ pageTitle, children }) => {
 
     return (
         <div className={container}>
-            <header className={siteTitle}>{data.site.siteMetadata.title}</header>
+            <Typography variant="h5" mt={10}>
+                <Link to="/" underline="none" color="inherit">
+                    <b>{data.site.siteMetadata.title}</b>
+                </Link>
+            </Typography>
             <nav>
                 <ul className={navLinks}>
                     <li className={navLinkItem}>
-                        <Link to="/" className={navLinkText}>Home</Link>
+                        <Link to="/about" className={navLinkText} underline="hover" color="inherit">
+                            About
+                        </Link>
                     </li>
                     <li className={navLinkItem}>
-                        <Link to="/about" className={navLinkText}>About</Link>
+                        <Link to="/blog" className={navLinkText} underline="hover" color="inherit">
+                            Blog
+                        </Link>
                     </li>
                     <li className={navLinkItem}>
-                        <Link to="/blog" className={navLinkText}>Blog</Link>
-                    </li>
-                    <li className={navLinkItem}>
-                        <Link to="/portfolio" className={navLinkText}>Portfolio</Link>
+                        <Link to="/portfolio" className={navLinkText} underline="hover" color="inherit">
+                            Portfolio
+                        </Link>
                     </li>
                 </ul>
             </nav>
-        <main>
-            <h1 className={heading}>{pageTitle}</h1>
-            {children}
-        </main>
-        </div>
+            <main>
+                <Typography variant="h4" mt={10}>
+                    <b>{pageTitle}</b>
+                </Typography>
+                <Typography variant="p">
+                    {children}
+                </Typography>
+
+            </main>
+        </div >
     )
 }
 
