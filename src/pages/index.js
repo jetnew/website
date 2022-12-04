@@ -9,6 +9,8 @@ import Seo from '../components/seo'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
+import Stack from '@mui/material/Stack'
+import Chip from '@mui/material/Chip'
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -19,6 +21,10 @@ const IndexPage = () => {
             title
             date(formatString: "DD MMM YYYY")
             slug
+            excerpt
+            article
+            code
+            demo
           }
           id
           excerpt
@@ -40,7 +46,10 @@ const IndexPage = () => {
       <p>I'm a data scientist in Singapore. I write about data science, engineering and research. I like games and building AI to play games.</p>
       <p>More <Link to="/about">about me</Link>.</p>
 
-      <h1>Latest Posts</h1>
+      <Stack direction="row" justifyContent="space-between" alignItems="flex-end">
+        <h1>Latest Posts</h1>
+        <Chip label="View all" href="/blog" variant="outlined" />
+      </Stack>
 
       <Grid container spacing={2}>
         <Grid item xs={6}>
@@ -51,7 +60,11 @@ const IndexPage = () => {
         </Grid>
       </Grid>
 
-      <h1>Projects</h1>
+      <Stack direction="row" justifyContent="space-between" alignItems="flex-end">
+        <h1>Projects</h1>
+        <Chip label="View all" variant="outlined" href="/portfolio" />
+      </Stack>
+
 
       <Grid container spacing={2}>
         <Grid item xs={4}>
@@ -64,7 +77,7 @@ const IndexPage = () => {
           <ProjectBanner project={projects[2].frontmatter}></ProjectBanner>
         </Grid>
       </Grid>
-    </Layout>
+    </Layout >
   )
 }
 

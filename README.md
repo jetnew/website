@@ -14,6 +14,6 @@ npm install gatsby-remark-images gatsby-remark-prismjs gatsby-remark-autolink-he
 npm install gatsby-plugin-image gatsby-plugin-sharp gatsby-source-filesystem
 npm install gatsby-plugin-mdx @mdx-js/react
 npm install gatsby-transformer-sharp
-npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material @mui/material @emotion/react @emotion/styled
 npm install @fontsource/roboto
 ```
