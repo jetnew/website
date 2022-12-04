@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Link } from '@mui/material'
+import Link from '../components/link'
 import Layout from '../components/layout'
 import PostBanner from '../components/postbanner'
 import ProjectBanner from '../components/projectbanner'
@@ -48,7 +48,9 @@ const IndexPage = () => {
 
       <Stack direction="row" justifyContent="space-between" alignItems="flex-end">
         <h1>Latest Posts</h1>
-        <Chip label="View all" href="/blog" variant="outlined" />
+        <Link to="/blog" underline="none">
+          <Chip label="View all" variant="outlined" onClick={() => { }} />
+        </Link>
       </Stack>
 
       <Grid container spacing={2}>
@@ -60,9 +62,11 @@ const IndexPage = () => {
         </Grid>
       </Grid>
 
-      <Stack direction="row" justifyContent="space-between" alignItems="flex-end">
+      <Stack direction="row" justifyContent="space-between" alignItems="center">
         <h1>Projects</h1>
-        <Chip label="View all" variant="outlined" href="/portfolio" />
+        <Link to="/portfolio" underline="none">
+          <Chip label="View all" variant="outlined" onClick={() => { }} clickable />
+        </Link>
       </Stack>
 
 

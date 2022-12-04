@@ -57,7 +57,6 @@ const Layout = ({ pageTitle, children }) => {
                 <Typography variant="p">
                     {children}
                 </Typography>
-
             </main>
         </div >
     )

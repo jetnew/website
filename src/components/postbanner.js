@@ -12,7 +12,7 @@ const PostBanner = ({ post }) => {
                 <Typography variant="button">{post.date}</Typography>
             </Grid>
             <Grid item>
-                <Link to={`/blog/${post.slug}`}>
+                <Link to={`/blog/${post.slug}`} underline="hover" color="inherit">
                     <Typography variant="body1"><b>{post.title}</b></Typography>
                 </Link>
             </Grid>
