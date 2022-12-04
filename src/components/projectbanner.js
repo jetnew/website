@@ -9,12 +9,12 @@ import CardContent from '@mui/material/CardContent'
 const ProjectBanner = ({ project }) => {
     return (
         <Card variant="outlined" sx={{ p: 1 }}>
-            <CardContent>
-                <Link to={`/portfolio/${project.slug}`} underline="none">
+            <Link to={`/portfolio/${project.slug}`} underline="none">
+                <CardContent>
                     <Typography variant="button">{project.date}</Typography>
                     <Typography variant="body1"><b>{project.title}</b></Typography>
-                </Link>
-            </CardContent>
+                </CardContent>
+            </Link>
         </Card>
     )
 }
