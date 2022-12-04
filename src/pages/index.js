@@ -2,6 +2,8 @@ import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Link } from '@mui/material'
 import Layout from '../components/layout'
+import PostBanner from '../components/postbanner'
+import ProjectBanner from '../components/projectbanner'
 // import { StaticImage } from 'gatsby-plugin-image'
 import Seo from '../components/seo'
 
@@ -32,15 +34,7 @@ const IndexPage = () => {
         data.allMdx.nodes
           .filter((node) => node.internal.contentFilePath.match(new RegExp('/blog/')))
           .map((node) => (
-            <article key={node.id}>
-              <h2>
-                <Link to={`/blog/${node.frontmatter.slug}`}>
-                  {node.frontmatter.title}
-                </Link>
-              </h2>
-              <p>{node.frontmatter.date}</p>
-              <p>{node.excerpt}</p>
-            </article>
+            <PostBanner post={node.frontmatter}></PostBanner>
           ))
       }
       <h1>Projects</h1>
@@ -48,15 +42,7 @@ const IndexPage = () => {
         data.allMdx.nodes
           .filter((node) => node.internal.contentFilePath.match(new RegExp('/portfolio/')))
           .map((node) => (
-            <article key={node.id}>
-              <h2>
-                <Link to={`/blog/${node.frontmatter.slug}`}>
-                  {node.frontmatter.title}
-                </Link>
-              </h2>
-              <p>{node.frontmatter.date}</p>
-              <p>{node.excerpt}</p>
-            </article>
+            <ProjectBanner project={node.frontmatter}></ProjectBanner>
           ))
       }
     </Layout>

@@ -5,8 +5,8 @@ import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 
 const BlogPost = ({ data, children }) => {
-    const image = getImage(data.mdx.frontmatter.hero_image)
-    return (
+  const image = getImage(data.mdx.frontmatter.hero_image)
+  return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
       <p>{data.mdx.frontmatter.date}</p>
       <GatsbyImage
@@ -37,6 +37,6 @@ query ($id: String) {
 }
 `
 
-export const Head = ({ data }) => <Seo title={data.mdx.frontmatter.title}/>
+export const Head = ({ data }) => <Seo title={data.mdx.frontmatter.title} />
 
 export default BlogPost
