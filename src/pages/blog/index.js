@@ -2,21 +2,22 @@ import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
+import PostBanner from '../../components/postbanner'
 
 const BlogPage = ({ data }) => {
   return (
     <Layout pageTitle="Writing">
       {
         data.allMdx.nodes.map((node) => (
-          <article key={node.id}>
-            <h2>
-              <Link to={`/blog/${node.frontmatter.slug}`}>
-                {node.frontmatter.title}
-              </Link>
-            </h2>
-            <p>{node.frontmatter.date}</p>
-            <p>{node.excerpt}</p>
-          </article>
+          // <article key={node.id}>
+          //   <h2>
+          //     <Link to={`/blog/${node.frontmatter.slug}`}>
+          //       {node.frontmatter.title}
+          //     </Link>
+          //   </h2>
+          //   <p>{node.frontmatter.date}</p>
+          // </article>
+          <PostBanner post={node.frontmatter}></PostBanner>
         ))
       }
     </Layout>
